@@ -1,6 +1,7 @@
 package com.devid_academy.tutokotlin
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -19,7 +20,18 @@ class FormActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
 
+            val myPref = applicationContext
+                .getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+
             val name = tvName.text.toString()
+
+            myPref.edit()
+                .putString(NAME_KEY, name )
+                .apply()
+
+            val intent = Intent(this@FormActivity, MainActivity::class.java)
+            intent.putExtra(NAME_KEY, name)
+            startActivity(intent)
 
 
         }
