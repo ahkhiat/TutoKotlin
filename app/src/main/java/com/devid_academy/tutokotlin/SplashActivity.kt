@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
         val nameFromSP = myPref.getString(NAME_KEY, null) ?: ""
 
-        Handler(Looper.getMainLooper()).postDelayed({
+//        Handler(Looper.getMainLooper()).postDelayed({
             val intent = if(nameFromSP.isNotEmpty()) {
                 Intent(this@SplashActivity, MainActivity::class.java).apply {
                     putExtra(NAME_KEY, nameFromSP)
@@ -35,7 +35,7 @@ class SplashActivity : AppCompatActivity() {
             }
             startActivity(intent)
             finish()
-        }, 3000)
+//        }, 3000)
 
     }
 }
