@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TutoKotlin</string>
+    <string name="cca_ph_country_name">Nom du pays</string>
+    <string name="cca_ph_country_url">Url du drapeau</string>
+
+    <string name="cca_button_validate">Créer pays</string>
+    <string name="cca_title">Ajout pays</string>
+
+
 </resources>

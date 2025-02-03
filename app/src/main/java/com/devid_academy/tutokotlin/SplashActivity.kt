@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
         val nameFromSP = myPref.getString(NAME_KEY, null) ?: ""
 
-//        Handler(Looper.getMainLooper()).postDelayed({
+        Handler().postDelayed({
             val intent = if(nameFromSP.isNotEmpty()) {
                 Intent(this@SplashActivity, MainActivity::class.java).apply {
                     putExtra(NAME_KEY, nameFromSP)
@@ -35,7 +35,22 @@ class SplashActivity : AppCompatActivity() {
             }
             startActivity(intent)
             finish()
-//        }, 3000)
+        }, 3000)
+
+        // Attention, trop de variables temporaires
+
+        // méthode optimisée
+
+//        applicationContext
+//            .getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+//            .let{
+//                if((it.getString(NAME_KEY, null) ?: "").isNotEmpty() {
+//                        Intent(this@SplashActivity, MainActivity::class.java).apply {
+//                            putExtra(NAME_KEY, nameFromSP)
+//                    })
+//            }
+
+
 
     }
 }

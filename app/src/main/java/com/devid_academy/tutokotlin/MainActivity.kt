@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             tvNom.text = "Bonjour $receivedName"
         }
 
+
         btnLogout.setOnClickListener{
             myPref.edit().remove(NAME_KEY).apply()
             val intent = Intent(this@MainActivity, SplashActivity::class.java)
